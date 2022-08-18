@@ -1,10 +1,12 @@
 import {Button, StyleSheet, View} from "react-native"
-import {useState} from "react"
+import {useContext, useState} from "react"
 import Cell from "./Cell"
+import {ThemeContext} from "./ThemeWrapper"
 
 const Board = ({size}) => {
   const [shouldDrawCircle, setShouldDrawCircle] = useState(true)
   const [cellStatus, setCellStatus] = useState(Array(size * size).fill(0))
+  const {theme} = useContext(ThemeContext)
 
   const onPress = (index) => {
     if (cellStatus[index] === 0) {
@@ -42,6 +44,7 @@ const Board = ({size}) => {
         })}
       </View>
       <Button
+        color={theme.buttonColor}
         title={'Recommencer'}
         onPress={() => setCellStatus(Array(size * size).fill(0))}
       />

@@ -1,24 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native'
-import Board from "./src/Board"
+import {ThemeWrapper} from "./src/ThemeWrapper"
+import Game from "./src/Game"
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tic Tac Toe</Text>
-      <Board size={3}/>
-    </View>
+const App = () => (
+    <ThemeWrapper>
+      <Game />
+    </ThemeWrapper>
   )
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'gray',
-  },
-  title: {
-    fontSize: 40,
-    marginBottom: 20
-  }
-})
+export default App
