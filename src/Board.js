@@ -43,7 +43,7 @@ const Board = ({size}) => {
       </View>
       <Button
         title={'Recommencer'}
-        onPress={() => setCellStatus(Array(size * size).fill(''))}
+        onPress={() => setCellStatus(Array(size * size).fill(0))}
       />
     </>
   )
